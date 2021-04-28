@@ -2,26 +2,100 @@
 <html>
 
 <head>
-    <title>Embedding Vega-Lite</title>
+    <title>Exploratory Data Analysis</title>
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 </head>
 
 <body>
+    <h1>Exploratory Data Analysis</h1>
+    <h2>The Dataset</h2>
+    <p>The dataset I have selected is the <a href="https://www.kaggle.com/osmi/mental-health-in-tech-survey/data">Mental
+            Health in Tech dataset</a> from Kaggle. The dataset
+        contains information about respondents, their employers, and as well as their answers to a survey on mental
+        health in the tech workplace. I hope to use this dataset to try to understand
+        the attitudes towards mental health in the tech workplace.</p>
+    <h2>Questions</h2>
+    <ol>
+        <li>How does mental health interfere with people's work by age?</li>
+        <!-- <li>Which country has the most respondents?</li> -->
+        <li>Does age play a role in whether people seek treatment for a mental health condition?</li>
+        <!-- - seek treatment, by age -->
+        </li>
+        <li>How do attitudes towards mental health differ from physical health?</li>
+        <!-- mentalhealthconsequence, physhealthconsequence, mentalhealthinterview, physhealthinterview, mentalvsphysical -->
+        <!-- <li>Do employers take mental health as seriously as physical health?</li> -->
+        <li>Do employers provide employees with enough resources regarding mental health?</li>
+        <!-- - wellness_program, seek_help, benefits? -->
+        <!-- <li>How easy is it for people to take medical leave for mental health?</li>
+        <li>Are employers with more employees more likely to provide mental health benefits than employers with fewer
+            employees?</li> -->
+        <li>Are people more likely to discuss a mental health issue with their coworkers or supervisors?</li>
+    </ol>
+    <h2>Exploratory Visual Analysis</h2>
+    <h3>Phase 1</h3>
+    <p>The dataset contains 27 variables and 1,259 rows (records). Of the 27 variables, 22 of them are
+        nominal/categorical. Because a majority of my variables are categorical/nominal, most of my viusalizations 
+        will bar plots rather than scatter plots or line plots. One variable, Timestamp, is temporal. The Age and number of employees (no_employees)
+        are the only two numerical variables. Two variables, Country and state, are geographical.
+        The main variables I will be using to answer my questions are:
+    <ul>
+        <li>Age</li>
+        <li>Country</li>
+        <li>treatment (Respondent sought treatment for mental health condition?)</li>
+        <li>no_employees (number of employees at organization)</li>
+        <li>benefits (employer provides mental health benefits?)</li>
+        <li>seek_help (employer provides resources to learn moer about mental health issues and how to seek help?)</li>
+        <li>leave (how easy is it for you to take medical leave for a mental health condition)</li>
+        <li>coworkers (Would respondent be willing to discuss a mental health issue with their coworkers?)</li>
+        <li>supervisor (Would you be willing to discuss a mental health issue with their supervisor?)</li>
+        <li>mentalvsphysical (Does respondent feel that their employer takes mental health as seriously as physical
+            health?)</li>
+    </ul>
+    </p>
+    <h3>How are variables distributed?</h3>
+    <p>Visualization 1 - Distribution of Age</p>
     <div id="vis1"></div>
-    <br/>
-    <br/>
-    <br/>
+    <p>From the visualization, we can see that in the dataset, there is one record with someone who has an age of almost
+        100,000,000,000. This is not possible, so I will need
+        to filter out ages that are greater than 100.
+    </p>
+    <br />
+    <p>Visualization 2 - Distribution of Age after filtering out ages over 100</p>
     <div id="vis2"></div>
+    <p>From the visualization, we can see that in the dataset, there multiple records of people who have negative ages.
+        This is also not possible, so I will need
+        to filter out ages that are less than 0.
+    </p>
+    <br />
+    <p>Visualization 3 - Distribution of Age after filtering out ages over 100 and ages less than 0</p>
     <div id="vis3"></div>
+    <p>From the visualization, we can see that there is a bell curve shape, which indicates a relatively normal
+        distribution of ages.
+        The majority of respondents were between 20 to 40 years old, with 29 year olds being the most frequent
+        respondent.</p>
+    <p>Visualization 4 - Distribution of Work Interference</p>
     <div id="vis4"></div>
+    <p>From the visualization, we see that there is an 'NA' response category, meaning that people did not have a mental 
+        health condition. To view the distribution for work interference of a mental health condition, I will need to filter
+        out the 'NA' responses. 
+    </p>
+    <p>Visualization 5 - Distribution of Work Interference after filtering out NA responses</p>
     <div id="vis5"></div>
+    <p>From the visualization, we see that the most frequent response is that a mental health condition
+        sometimes interferes with their work. Although the rest of the response categories are about
+        half the frequency or less than the Sometimes catetgory, the frequency is somewhat similar among the
+        rest of the options for Never, Rarely, and NA, with Often being the least frequent.</p>
     <div id="vis6"></div>
     <div id="vis7"></div>
     <div id="vis8"></div>
     <div id="vis9"></div>
+    <div id="vis10"></div>
+    <div id="vis11"></div>
+    <div id="vis12"></div>
 
     <script src="js/main.js"></script>
 </body>
+
 </html>
