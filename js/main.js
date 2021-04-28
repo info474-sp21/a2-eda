@@ -136,12 +136,45 @@ var work_interfere_filter = {
 vegaEmbed("#vis5", work_interfere_filter)
 
 
+// var work_interfere_age = {
+//     title: {
+//         text: "Distribution of Work Interference of Mental Health Condition by Age"
+//     },
+//     height: 300,
+//     width: 250,
+//     data: { "url": "https://raw.githubusercontent.com/info474-sp21/a2-eda/main/data/survey.csv" },
+//     mark: { type: "bar", tooltip: true, filled: true },
+//     transform: [{
+//         filter: "datum.work_interfere !== 'NA' && datum.Age >= 0 && datum.Age <= 80"
+//     }, {
+//         bin: true,
+//         field: "Age",
+//         as: "binned_age"
+//     }
+//     ],
+//     encoding: {
+//         x: {
+//             field: "work_interfere", type: "nominal", title: "Work Interference of Mental Health Condition",
+//             sort: ["Never", "Rarely", "Sometimes", "Often", "NA"]
+//         },
+//         y: { aggregate: "count", "type": "quantitative", title: "Frequency" },
+//         color: {
+//             field: "binned_age",
+//             type: "ordinal",
+//             title: "Age (binned)"
+//         }
+//     }
+// }
+
+// vegaEmbed("#vis6", work_interfere_age)
+
+// https://vega.github.io/vega-lite/docs/bar.html
 var work_interfere_age = {
     title: {
         text: "Distribution of Work Interference of Mental Health Condition by Age"
     },
-    height: 300,
-    width: 250,
+    height: 400,
+    width: 400,
     data: { "url": "https://raw.githubusercontent.com/info474-sp21/a2-eda/main/data/survey.csv" },
     mark: { type: "bar", tooltip: true, filled: true },
     transform: [{
@@ -153,16 +186,25 @@ var work_interfere_age = {
     }
     ],
     encoding: {
-        x: {
-            field: "work_interfere", type: "nominal", title: "Work Interference of Mental Health Condition",
-            sort: ["Never", "Rarely", "Sometimes", "Often", "NA"]
+        y: {
+            aggregate: "count"
         },
-        y: { aggregate: "count", "type": "quantitative", title: "Frequency" },
+        x: {field: "binned_age"},
         color: {
-            field: "binned_age",
-            type: "ordinal",
-            title: "Age (binned)"
+            field: "work_interfere",
+            // scale: {range: []}
         }
+
+        // x: {
+        //     field: "work_interfere", type: "nominal", title: "Work Interference of Mental Health Condition",
+        //     sort: ["Never", "Rarely", "Sometimes", "Often", "NA"]
+        // },
+        // y: { aggregate: "count", "type": "quantitative", title: "Frequency" },
+        // color: {
+        //     field: "binned_age",
+        //     type: "ordinal",
+        //     title: "Age (binned)"
+        // }
     }
 }
 
@@ -277,160 +319,112 @@ var mental_physical = {
 vegaEmbed("#vis9", mental_physical)
 
 
-var mental_health_interview = {
-    title: {
-        text: "mental_health_interview",
-        //subtitle: "A majority of people were unsure whether their employer takes mental health as seriously as physical health.",
-        subtitleFontSize: 14
-    },
-    width: 200,
-    data: { "url": "https://raw.githubusercontent.com/info474-sp21/a2-eda/main/data/survey.csv" },
-    mark: { type: "bar", tooltip: true },
-    encoding: {
-        x: { field: "mental_health_interview", title: "mental_health_interview", type: "nominal", sort: "-y" }, // , "lt": 2020-01-01, axis: { "labelAngle": 15 },
-        y: { aggregate: "count", title: "Count of Records" },
-        // color: {
-        //     field: "phys_health_interview",
-        //     type: "nominal",
-        //     scale: {
-        //         domain: ["No", "Maybe", "Yes"],
-        //         range: ['#f03232', '#FF8C00', '#5079a5']
-        //     },
-        //     title: "phys_health_interview"
-        //     // tooltip: { field: "year", type: "temporal" }
-        //     // tooltip: { aggregate: "count", field: "name" , type: "quantitative" }
-        // }
-    }
-}
-vegaEmbed("#vis10", mental_health_interview)
-
-
-var phys_health_interview = {
-    title: {
-        text: "phys_health_interview",
-        //subtitle: "A majority of people were unsure whether their employer takes mental health as seriously as physical health.",
-        subtitleFontSize: 14
-    },
-    width: 200,
-    data: { "url": "https://raw.githubusercontent.com/info474-sp21/a2-eda/main/data/survey.csv" },
-    mark: { type: "bar", tooltip: true },
-    encoding: {
-        x: { field: "phys_health_interview", title: "phys_health_interview", type: "nominal", sort: "-y" }, // , "lt": 2020-01-01, axis: { "labelAngle": 15 },
-        y: { aggregate: "count", title: "Count of Records" }
-    }
-}
-vegaEmbed("#vis11", phys_health_interview)
-// https://vega.github.io/vega-lite/examples/repeat_layer.html
-
-
-// var mental_physical_interview = {
+// var mental_health_interview = {
 //     title: {
-//         text: "Mental health vs physical health interview",
+//         text: "mental_health_interview",
 //         //subtitle: "A majority of people were unsure whether their employer takes mental health as seriously as physical health.",
 //         subtitleFontSize: 14
 //     },
 //     width: 200,
-//     columns: 2,
-//     "data": {
-//         "url": "https://raw.githubusercontent.com/info474-sp21/a2-eda/main/data/survey.csv"
-//     },
-//     //   "transform": [{
-//     //     "filter": "datum.location === 'Seattle'"
-//     //   }],
-//     "concat": [
-//         {
-//             "mark": "bar",
-//             "encoding": {
-//                 x: { field: "mental_health_interview", title: "mental_health_interview", type: "nominal", sort: "-y" }, // , "lt": 2020-01-01, axis: { "labelAngle": 15 },
-//                 y: { aggregate: "count", title: "Count of Records" },
-//             }
-//         },
-//         {
-//             "mark": "bar",
-//             "encoding": {
-//                 x: { field: "phys_health_interview", title: "phys_health_interview", type: "nominal", sort: "-y" }, // , "lt": 2020-01-01, axis: { "labelAngle": 15 },
-//                 y: { aggregate: "count", title: "Count of Records"}
-//             }
-//         },
-//         {
-//             "mark": "bar",
-//             "encoding": {
-//                 x: { field: "mental_health_consequence", title: "mental_health_consequence", type: "nominal", sort: "-y" }, // , "lt": 2020-01-01, axis: { "labelAngle": 15 },
-//                 y: { aggregate: "count", title: "Count of Records" },
-//             }
-//         },
-//         {
-//             "mark": "bar",
-//             "encoding": {
-//                 x: { field: "phys_health_consequence", title: "phys_health_consequence", type: "nominal", sort: "-y" }, // , "lt": 2020-01-01, axis: { "labelAngle": 15 },
-//                 y: { aggregate: "count", title: "Count of Records"}
-//             }
-//         },
-
-//     ]
+//     data: { "url": "https://raw.githubusercontent.com/info474-sp21/a2-eda/main/data/survey.csv" },
+//     mark: { type: "bar", tooltip: true },
+//     encoding: {
+//         x: { field: "mental_health_interview", title: "mental_health_interview", type: "nominal", sort: "-y" }, // , "lt": 2020-01-01, axis: { "labelAngle": 15 },
+//         y: { aggregate: "count", title: "Count of Records" },
+//         // color: {
+//         //     field: "phys_health_interview",
+//         //     type: "nominal",
+//         //     scale: {
+//         //         domain: ["No", "Maybe", "Yes"],
+//         //         range: ['#f03232', '#FF8C00', '#5079a5']
+//         //     },
+//         //     title: "phys_health_interview"
+//         //     // tooltip: { field: "year", type: "temporal" }
+//         //     // tooltip: { aggregate: "count", field: "name" , type: "quantitative" }
+//         // }
+//     }
 // }
+// vegaEmbed("#vis10", mental_health_interview)
+
+
+// var phys_health_interview = {
+//     title: {
+//         text: "phys_health_interview",
+//         //subtitle: "A majority of people were unsure whether their employer takes mental health as seriously as physical health.",
+//         subtitleFontSize: 14
+//     },
+//     width: 200,
+//     data: { "url": "https://raw.githubusercontent.com/info474-sp21/a2-eda/main/data/survey.csv" },
+//     mark: { type: "bar", tooltip: true },
+//     encoding: {
+//         x: { field: "phys_health_interview", title: "phys_health_interview", type: "nominal", sort: "-y" }, // , "lt": 2020-01-01, axis: { "labelAngle": 15 },
+//         y: { aggregate: "count", title: "Count of Records" }
+//     }
+// }
+// vegaEmbed("#vis11", phys_health_interview)
+// https://vega.github.io/vega-lite/examples/repeat_layer.html
 
 
 var mental_physical_interview = {
-    "data": {
-      "url": "data/weather.csv"
+    title: {
+        text: "Mental health vs physical health interview",
+        //subtitle: "A majority of people were unsure whether their employer takes mental health as seriously as physical health.",
+        subtitleFontSize: 14
     },
-    "transform": [{
-      "filter": "datum.location === 'Seattle'"
-    }],
-  
+    "repeat": ["mental_health_interview", "phys_health_interview",
+        "mental_health_consequence", "phys_health_consequence"],
     "columns": 2,
-    "concat": [
-      {
-        "mark": "bar",
+    "spec": {
+        "width": 200,
+        // "height": 200,
+        "data": { "url": "https://raw.githubusercontent.com/info474-sp21/a2-eda/main/data/survey.csv" },
+        mark: { type: "bar", tooltip: true },
         "encoding": {
-          "x": {
-            "timeUnit": "month",
-            "field": "date",
-            "type": "ordinal"
-          },
-          "y": {
-            "aggregate": "mean",
-            "field": "precipitation"
-          }
-        }
-      },
-      {
-        "mark": "bar",
-        "encoding": {
-          "x": {
-            "timeUnit": "month",
-            "field": "date",
-            "type": "ordinal"
-          },
-          "y": {
-            "aggregate": "median",
-            "field": "precipitation"
-          }
-        }
-      },
-      {
-        "mark": "point",
-        "encoding": {
-          "x": {
-            "field": "temp_min",
-            "bin": true
-          },
-          "y": {
-            "field": "temp_max",
-            "bin": true
-          },
-          "size": {
-            "aggregate": "count"
-          }
-        }
-      }
-    ]
-  }
+            "x": { "field": { "repeat": "repeat" }, sort: ["Yes", "No", "Maybe"] },
+            "y": {
+                "aggregate": "count", title: "Frequency",
+                "scale": {
+                    "domain": [0, 1100]
+                  }
+            }
+        },
+    }
+}
+
+
+vegaEmbed("#vis10", mental_physical_interview)
 
 
 
-vegaEmbed("#vis12", mental_physical_interview)
+var coworker_supervisor = {
+    title: {
+        text: "coworker_supervisor",
+        //subtitle: "A majority of people were unsure whether their employer takes mental health as seriously as physical health.",
+        subtitleFontSize: 14
+    },
+    "repeat": ["coworkers", "supervisor"],
+    "columns": 2,
+    "spec": {
+        "width": 200,
+        // "height": 200,
+        "data": { "url": "https://raw.githubusercontent.com/info474-sp21/a2-eda/main/data/survey.csv" },
+        mark: { type: "bar", tooltip: true },
+        "encoding": {
+            "x": { "field": { "repeat": "repeat" }, sort: ["Yes", "No", "Some of them"] },
+            "y": {
+                "aggregate": "count", title: "Frequency",
+                "scale": {
+                    "domain": [0, 800]
+                  }
+            }
+        },
+    }
+}
+
+
+vegaEmbed("#vis11", coworker_supervisor)
+
+
 
 // var mental_physical = {
 //     title: {
