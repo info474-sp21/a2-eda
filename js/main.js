@@ -31,9 +31,6 @@ var age_remove_large = {
     height: 300,
     width: 250,
     data: { "url": "https://raw.githubusercontent.com/info474-sp21/a2-eda/main/data/survey.csv" },
-    // transform: [{
-    //     filter: "datum.Age <= 100 && datum.Age >= 0"
-    // }],
     mark: { type: "point", tooltip: true, filled: true },
     transform: [{
         filter: "datum.Age < 100"
@@ -60,9 +57,6 @@ var age_filter = {
     height: 300,
     width: 250,
     data: { "url": "https://raw.githubusercontent.com/info474-sp21/a2-eda/main/data/survey.csv" },
-    // transform: [{
-    //     filter: "datum.Age <= 100 && datum.Age >= 0"
-    // }],
     mark: { type: "point", tooltip: true, filled: true },
     transform: [{
         filter: "datum.Age > 1 && datum.Age < 100"
@@ -137,7 +131,6 @@ var work_interfere_age = {
     height: 400,
     width: 800,
     data: { "url": "https://raw.githubusercontent.com/info474-sp21/a2-eda/main/data/survey.csv" },
-    //mark: { type: "point", tooltip: true, filled: true },
     transform: [{
         filter: "datum.work_interfere !== 'NA' && datum.Age > 0 && datum.Age < 80"
     }, {
@@ -156,7 +149,6 @@ var work_interfere_age = {
             title: "Age (binned)",
             axis: { labelAngle: 0, labelFontSize: 12}
         },
-        // size: { value: 12 },
         color: {
             field: "work_interfere",
             title: "Work Interference"
@@ -164,23 +156,18 @@ var work_interfere_age = {
     },
     "layer": [{
         mark: { type: "point", tooltip: true },
-        // encoding: {
-        //     size: {value: 40}
-        // }
     }, {
         "mark": {
             "type": "text",
             "align": "left",
             "baseline": "middle",
             "xOffset": 10
-            // fontSize: 13
         },
         "encoding": {
             "text": { "field": "work_interfere"},
             color: {
                 value: "black",
             },
-            // size: { value: 12 }
         }
     }]
 }
@@ -194,7 +181,6 @@ var treat_age = {
     height: 400,
     width: 800,
     data: { "url": "https://raw.githubusercontent.com/info474-sp21/a2-eda/main/data/survey.csv" },
-    //mark: { type: "point", tooltip: true, filled: true },
     transform: [{
         filter: "datum.Age > 0 && datum.Age < 80 && datum.work_interfere !== 'NA'"
     }, {
@@ -208,7 +194,6 @@ var treat_age = {
             "field": "treatment",
             "type": "nominal",
             title: "Sought Treatment?"
-            //   "legend": null
         }
     },
     "layer": [{
@@ -274,7 +259,7 @@ var mental_physical = {
             title: "Employer views Mental Health as Serious as Physical Health",
             type: "nominal", sort: "-y",
             axis: { labelAngle: 0, labelFontSize: 12, titleFontSize: 12 }
-        }, // , "lt": 2020-01-01, axis: { "labelAngle": 15 },
+        }, 
         y: { aggregate: "count", title: "Count of Records" },
         opacity: {
             condition: {
@@ -299,7 +284,6 @@ var mental_physical_interview = {
     "columns": 2,
     "spec": {
         "width": 200,
-        // "height": 200,
         "data": { "url": "https://raw.githubusercontent.com/info474-sp21/a2-eda/main/data/survey.csv" },
         transform: [{
             filter: "datum.Age > 0 && datum.Age < 80 && datum.work_interfere !== 'NA'"
@@ -334,14 +318,11 @@ var company_support = {
         dx: 200,
         dy: -10,
         fontSize: 15
-        //subtitle: "A majority of people were unsure whether their employer takes mental health as seriously as physical health.",
-        // subtitleFontSize: 14
     },
     "repeat": ["benefits", "seek_help", "wellness_program"],
     "columns": 3,
     "spec": {
         "width": 200,
-        // "height": 200,
         "data": { "url": "https://raw.githubusercontent.com/info474-sp21/a2-eda/main/data/survey.csv" },
         transform: [{
             filter: "datum.Age > 0 && datum.Age < 80 && datum.work_interfere !== 'NA'"
@@ -375,20 +356,15 @@ vegaEmbed("#vis10", company_support)
 
 
 
-// https://vega.github.io/vega/docs/title/
 var coworker_supervisor = {
     title: {
         text: "Likelihood of Discussing Mental Health Issue with Coworkers vs Supervisor",
-        // dx: 20,
         fontSize: 15
-        //subtitle: "A majority of people were unsure whether their employer takes mental health as seriously as physical health.",
-        // subtitleFontSize: 14
     },
     "repeat": ["coworkers", "supervisor"],
     "columns": 2,
     "spec": {
         "width": 200,
-        // "height": 200,
         "data": { "url": "https://raw.githubusercontent.com/info474-sp21/a2-eda/main/data/survey.csv" },
         transform: [{
             filter: "datum.Age > 0 && datum.Age < 80 && datum.work_interfere !== 'NA'"
