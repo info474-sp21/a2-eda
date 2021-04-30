@@ -14,7 +14,7 @@
     <p>The dataset I have selected is the <a href="https://www.kaggle.com/osmi/mental-health-in-tech-survey/data"
             target="_blank">Mental
             Health in Tech dataset</a> from Kaggle. The dataset
-        contains information about respondents, their employers, and as well as their answers to a survey on mental
+        contains information about respondents, their employers, as well as their answers to a survey on mental
         health in the tech workplace. I hope to use this dataset to try to understand
         the attitudes towards mental health in the tech workplace.</p>
     <h2>Questions</h2>
@@ -131,21 +131,24 @@
 
     <br />
     <br />
-    <p>Visualization 7 - Age Distribution of People who Did Seek Treatment and People who Did Not Seek Treatment</p>
+    <p>Visualization 7 - Age Distribution of People who Did Seek Treatment and People who Did Not Seek Treatment for a Mental Health Issue</p>
     <div id="vis7"></div>
     <p>
         For this visualization, I wanted to see how age plays a role in whether people seek treatment for a mental
         health
-        condition to help me answer the first question. The chart shows the distribution for people who did not seek
-        treatment
-        is distributed more to the left of the chart while the distribution for people who did seek treatment is
-        distributed
-        more to the right of the chart. This indicates that younger people did not seek treatment as much as older
-        people.
+        condition to help me answer the first question. Overall, the chart shows that more people sought treatment for 
+        their mental health issue than those who did not because the line for the 'Yes' category is higher than the 'No' category.     
+        The chart shows that far more people in the 20 and 40 age bins 
+        sought treatment than those who did not seek treatment. This is indicated by the large gap between the two lines at the 20 and 40 age bins. 
+        The frequency for those who did and did not seek treatment had smaller differences for people outside of the 20 and 40 age bins, due to the 
+        gap between the two lines getting smaller. This indicates that the rate for which people sought treatment decreased more dramatically as 
+        age increased.   
     </p>
 
-    <p>Based on visualizations 7 and 8, we can see that age does play a role in mental health. To assess mental health,
-        I used the work interference variable (If have a mental health condition, does it interfere with their work) and
+    <p>Based on visualizations 7 and 8, we can see that age does play a role in mental health. To investigate the first
+        question,
+        I assessed mental health by using the work interference variable (If have a mental health condition, does it
+        interfere with their work) and
         the
         treatment variable (whether respondents sought treatment for their mental health condition). I first compared
         the
@@ -153,8 +156,8 @@
         there
         are differences among the work interference variable and treatment variable by age, so we can conclude that age
         plays
-        a role in mental health. Younger people seek treatment for their mental health condition less frequently than
-        older people.
+        a role in mental health. Older people seek treatment for their mental health condition less frequently than
+        younger people.
         Additionally, for people in their 20s to 40s, a mental health condition most frequently interferes with their
         work condition
         sometimes, while for other ages, a mental health condition sometimes and often interferes with their work
@@ -181,38 +184,67 @@
     </p>
     <div id="vis9"></div>
     <p>
-        From the first row of charts, we can see that respondents are far less likely (more than twice less likely) to
-        bring up a mental health
-        issue in an interview compared to a physical health issue. From the second row of charts, we can see that far
-        more people feel that there
+        From the first row of charts, we can see that the most frequent response to whether an employee would bring up a mental health
+        issue in an interview is 'No'. However, when it comes to whether an employee would bring up a physical health issue
+        in an interview, the most frequent response is 'Maybe'. This indicates that people are more likely to bring up a physical
+        health issue in an interview than a mental health issue. Respondents are far less likely (more than twice less likely) to
+        bring up a mental health issue in an interview compared to a physical health issue. 
+        
+        From the second row of charts, we can see that far more people feel that there
         will not be any negative consequences of bringing up a physical health issue with their employer compared to a
         mental health issue.
     </p>
 
     <p>
-        Based on visualizations 8 and 9, we can see that age does play a role in mental health. To assess mental health,
-        I used the work interference variable (If have a mental health condition, does it interfere with their work) and
-        the
-        treatment variable (whether respondents sought treatment for their mental health condition). I first compared
-        the
-        age variable by the work interference variable and then by the treatment variable. In both cases, we see that
-        there
-        are differences among the work interference variable and treatment variable by age, so we can conclude that age
-        plays
-        a role in mental health. Younger people seek treatment for their mental health condition less frequently than
-        older people.
-        Additionally, for people in their 20s to 40s, a mental health condition most frequently interferes with their
-        work condition
-        sometimes, while for other ages, a mental health condition sometimes and often interferes with their work
-        condition.
+        Based on visualizations 8 and 9, we can see that there is a difference in how mental health and physical health
+        are viewed.
+        To investigate the second question and to assess the attitudes towards mental health and physical health, I
+        first plotted a histogram
+        of the mental vs physical variable, which measures whether respondents believe whether their employer
+        takes mental health as seriously as physical health. From the results, we see that most people don't know
+        whether
+        their employer takes mental health as seriously as physical health. Of those who do know, the number of people
+        who do believe their employers take mental health as seriously as physical health are about the same number of
+        people
+        who do not believe their employers take mental health as seriously as physical health. To continue investigating
+        the second question,
+        I used the variables: mental_health_interview, phys_health_interview, mental_health_consequence, and
+        phys_health_consequence. In visualization 9,
+        I plotted the mental_health_interview and phys_health_interview variables in the first row and plotted the
+        mental_health_consequence and phys_health_consequence
+        in the second row. In doing so, I am able to see all four plots at once and be able to compare their
+        frequencies. From the results, we can see
+        that more people prefer not to bring up a mental health issue in an interview compared to a physical issue.
+        Additionally, more people believe
+        that there will be negative consequences if they bring up a mental health issue compared to a physical health
+        issue. The attitude towards mental
+        health issues is more negative and undisclosed than physical health issues in the workplace.
     </p>
 
     <br />
     <h3>Visualization 10: Q3 (Do employers provide employees with enough resources regarding mental health?)</h3>
-    <p>Visualization 10 - Employers provide enough resources to seek help</p>
+    <p>Visualization 10 - Three charts comparing whether employers provide mental health benefits,
+        wellness programs, and resources to seek help for mental health issues</p>
     <div id="vis10"></div>
     <p>
+        From the visualization, we can see that although some employers provide mental health benefits,
+        many employers do not provide resources to learn more about mental health issues and how to seek help,
+        and a majority of employers do not discuss mental health as part of an employee wellness program.
+    </p>
 
+    <p>
+        Based on visualizations 10, we can see that even though employers provide mental health benefits, employers
+        do not provide employees with enough resources surrounding mental health.
+        To investigate the third question and to assess the resources employers provide employees,
+        I first plotted a histogram of the benefits to show how many employers provide mental health benefits to
+        their employees. From the results, we see that more than a third of employers provide mental health
+        benefits to their employees. To continue investigating the question, I plotted the seek_help variable
+        and wellness_program variables next to the benefits plot all in one row so that I am able to see all three plots
+        at once and be able to compare their frequencies and resources provided by the employers. From the results,
+        we can see that almost half of employers do not provide wellness programs and resouces to learn more about
+        mental health issues and how to seek help. Because of this, I believe that employers do not provide employees
+        with enough resouces regarding mental health, in terms of wellness programs
+        and resouces to learn more about mental health issues and how to seek help.
     </p>
 
     <br />
@@ -222,17 +254,93 @@
         issue with their coworkers or supervisor</p>
     <div id="vis11"></div>
     <p>
-
+        From the visualization, we can see that most people people are willing to talk some of their coworkers, but
+        this differs with supervisors. Surprisingly, more than double the number of people said yes to discussing a
+        mental
+        health issue with their supervisor than with their coworkers.
     </p>
-    <!-- 
-    <br/>
-    <p>
+    <br />
 
+    <h2>Write-Up</h2>
+    <h3>Questions</h3>
+    <p>
+        Questions are listed at the top of the page
     </p>
-    <div id="vis12"></div>
-    <p>
 
-    </p> -->
+    <h3>Analysis Process</h3>
+    <p>
+        Because my dataset has 22 categorical variables out of the 27 total variables, I knew that most of my plots 
+        would probably be histogram plots. For the first three visualizations, 
+        I wanted to explore how the age variable was distributed and whether the age
+        variable contained any data issues since the age variable is my only numerical variable that I will be using
+        to investigate one of my questions. I plotted my age variable as a histogram plot to view the age distribution
+        and noticed there were impossibly large age values and negative values, so I had to transform my data by
+        filtering out negative age values as well as very large age values so that I could create plots that use the
+        age variable later. For my next two visualizations, I wanted to explore how one of the categorical variables
+        were
+        distributed, so I plotted a histogram of the work_interfere variable. I noticed that there was an 'NA' category,
+        which
+        indicates that the respondent didn't have a mental health condition, so I had to transform my data by filtering
+        out
+        'NA' categories since I needed to investigate people who had a mental health condition.
+    </p>
+
+    <p>
+        For visualizations 6 and 7, I hoped to investigate my first question around how mental health is impacted by
+        age. To
+        assess mental health, I used the work interference of a mental health condition variable and the treatment
+        variable
+        and plotted each variable by the age. I wanted to see how work interference differed as age increased and how
+        treatment
+        differed as age increased. Because of this, I binned the age so that there weren't too many ages on the plot
+        and plotted it on the x-axis so that I could see how
+        treatment and work interference changed as age increased. For visualization 7, I made it a line chart so that I
+        could
+        see the distributions for the two categories for treatment (Yes, No) easily. I did not create a line chart for
+        visualization
+        6 because there were 4 possible categories for the work interference variable, so creating a line chart would
+        have cluttered
+        up the chart, so I made it show points instead. 
+    </p>
+
+    <p>For visualizations 8 and 9, I wanted to investigate my second question around the how attitudes toward 
+        mental health and physical health differ. To assess mental health and physical health, I first used the 
+        mental vs physical variable, and plotted a histogram to see how people feel their employer view mental 
+        health compared to physical health. Then, I continued investigating the question by using the mental_health_interview, 
+        phys_health_interview, mental_health_consequence, and phys_health_consequence variables. For visualizstion 9, 
+        I plotted the mental_health_interview and phys_health_interview variables in the first row and plotted the 
+        mental_health_consequence and phys_health_consequence in the second row. In doing so, I was able to see all four 
+        plots at once and be able to compare their frequencies across mental health and physical health. 
+    </p>
+
+    <p>
+        For visualization 10, I hoped to investigate my third question regarding mental health resources employers provide
+        their employees. To assess the resources employers provide employees, I first plotted a histogram of the benefits 
+        to show how many employers provide mental health benefits to their employees. To continue investigating the question, 
+        I plotted the seek_help variable and wellness_program variables next to the benefits plot all in one row so that I was 
+        able to see all three plots at once and be able to compare their frequencies and resources provided by the employers. 
+
+        For my last visualization, I wanted to investigate my fourth question on whether people feel more comfortable discussing
+        mental health issues with their coworkers or supervisors. To investigate this question, I used the coworkers and supervisor 
+        variables and created a histogram of each variable on plotted them side by side so that I could 
+        compare how frequently people would discuss their mental health issue with coworkers and supervisors. 
+    </p>
+
+    <h3>Main Lessons Learned</h3>
+    <p>
+        The main lesson I learned when working with my dataset is that for numerical variables, it is important to make sure you 
+        know the minimum and maximum value of the variable. For instance, my age variable initially had a minimum of -1726 and 
+        a maximum value of 99,999,999,999. This would have really messed up my plots that used the age variable if I did not 
+        transform and filter my data. The most surprising insight I gained from my dataset is that more people are willing to definitely
+        talk to their supervisor about a mental health issue than to their coworkers. Before I plotted the data to investigate this area,
+        I thought that very few people would want to talk to their supervisors about a mental health issue, but that is not the case.
+        For my other questions, I am not too surprised by my findings regarding mental health. For instance, my plots and findings confirmed 
+        what I had assumed about attitudes towards mental health and physical health; how mental health issues are brought up less frequently
+        than physical health issues in the tech workplace. Fortunately though, we can see in visualization 10 that there are places where we 
+        can make improvements to help people with mental health issues in the workplace. More employers could try to provide resources to their 
+        employees to learn more about mental health issues and how to seek help as well as discussing mental health in employee wellness programs.
+
+
 
     <script src="js/main.js"></script>
 </body>
